@@ -1,7 +1,7 @@
 
 ## Getting Started
 
-For run thise project, you will need a DRIVE API KEY and a GOOGLE OAUTH API KEY !important.
+For run thise project, you will need a GOOGLE DRIVE API KEY, and a GOOGLE OAUTH CLIENT ID !important.
 
 # 1. First activate the GOOGLE DRIVE service from google cloud apis:
     https://console.cloud.google.com/apis/library/drive.googleapis.com?project=daring-charmer-412915
