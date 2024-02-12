@@ -1,8 +1,6 @@
 
 ## Getting Started
 
-First, set the correct :
-
 For run thise project, you will need a DRIVE API KEY and a GOOGLE OAUTH API KEY !important.
 
 # 1. First activate GOOGLE DRIVE services from google cloud apis:
