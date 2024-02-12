@@ -1,13 +1,21 @@
-"use client";
+"use client"
 
 import useDrivePicker from "react-google-drive-picker";
 import { useState } from "react";
-import NavBar from "@/components/NavBard"
+import NavBar from "@/components/NavBard";
+
+interface DriveFile {
+  id: string;
+  name: string;
+  embedUrl: string;
+  url: string;
+  
+}
 
 function Home() {
   const [openPicker, authResponse] = useDrivePicker();
-  const [dataPicked, setDataPicked] = useState([]);
-  const [file, setFile] = useState(false);
+  const [dataPicked, setDataPicked] = useState<DriveFile[]>([]); 
+  const [file, setFile] = useState<boolean>(false);
 
   const handleOpenPicker = () => {
     openPicker({
@@ -20,10 +28,8 @@ function Home() {
       supportDrives: true,
       multiselect: true,
 
-      callbackFunction: (data) => {
-        if (data.action === "cancel") {
-          console.log("User clicked cancel/close button");
-        } else if (data.action === "picked") {
+      callbackFunction: (data: { action: string, docs: DriveFile[] }) => {
+        if (data.action === "picked") {
           setDataPicked(data.docs);
           setFile(true);
         }
@@ -37,7 +43,7 @@ function Home() {
 
       <div className="flex  justify-center items-center flex-grow ">
 
-        {file == true ? (
+        {file ? (
           <article className="bg-gray-50 py-4 px-3 rounded-xl">
             {dataPicked.map((file) => (
 
@@ -64,14 +70,14 @@ function Home() {
             ))}
           </article>
         ) : (
-          <p className="text-2xl text-white font-bold py-4 shadow-sm">No hay ningun archivo seleccionado</p>
+          <p className="text-2xl text-white font-bold py-4 shadow-sm">No hay ningún archivo seleccionado</p>
         )}
       </div>
 
       <div className="flex justify-center items-center pb-40">
         <button 
           className="px-4 py-3 rounded-2xl border-none outline-none bg-sky-500 font-bold text-white shadow-2xl hover:scale-[1.04]"
-          onClick={() => handleOpenPicker()}> 
+          onClick={handleOpenPicker}> 
           Seleccionar Archivo
         </button>
       </div>
