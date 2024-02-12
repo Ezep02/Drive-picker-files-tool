@@ -9,7 +9,7 @@ For run thise project, you will need a DRIVE API KEY and a GOOGLE OAUTH API KEY 
 # 2. You must create a new API KEY from google cloud credentials:  
     https://console.cloud.google.com/apis/credentials?project=daring-charmer-412915
 
-# 3. As the previous step, you must create a Oauth client id: 
+# 3. As the previous step, you must create an Oauth client id: 
     https://console.cloud.google.com/apis/credentials/oauthclient?previousPage=%2Fapis%2Fcredentials%3Fproject%3Ddaring-charmer-412915&project=daring-charmer-412915
 
     #How to do this: 
